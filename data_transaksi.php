@@ -8,17 +8,14 @@ include_once "database.php";
 include_once "fungsi.php";
 include_once "import/excel_reader2.php";
 ?>
-<section class="page_head">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <div class="page_title">
-                    <h2>Input Nilai</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    Halaman Utama
+                </h1>
+            </div><!-- /.page-header -->
 <?php
 //object database class
 $db_object = new database();
@@ -115,8 +112,6 @@ $query=$db_object->db_query($sql);
 $jumlah=$db_object->db_num_rows($query);
 ?>
 
-<div class="super_sub_content">
-    <div class="container">
         <div class="row">
             <!--UPLOAD EXCEL FORM-->
             <form method="post" enctype="multipart/form-data" action="">
@@ -130,7 +125,8 @@ $jumlah=$db_object->db_num_rows($query);
                     <input name="submit" type="submit" value="Upload Data" class="btn btn-success">
                 </div>
                 <div class="form-group">
-                    <button name="delete" type="submit"  class="btn btn-danger" >
+                    <button name="delete" type="submit"  class="btn btn-danger" 
+                            onclick="return confirm('Are you sure?')" >
                         <i class="fa fa-trash-o"></i> Delete All Data Transaction
                     </button>
                 </div>
@@ -172,6 +168,7 @@ $jumlah=$db_object->db_num_rows($query);
             <?php
             }
             ?>
+        </div>
         </div>
     </div>
 </div>
