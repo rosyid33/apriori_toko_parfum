@@ -13,7 +13,7 @@ include_once "import/excel_reader2.php";
         <div class="page-content">
             <div class="page-header">
                 <h1>
-                    Halaman Utama
+                    Data Transaksi
                 </h1>
             </div><!-- /.page-header -->
 <?php
@@ -110,28 +110,37 @@ $sql = "SELECT
          transaksi";
 $query=$db_object->db_query($sql);
 $jumlah=$db_object->db_num_rows($query);
-?>
+?>            
+<div class="row">
+    <div class="col-sm-4">
+        <div class="widget-box">
+        <!--UPLOAD EXCEL FORM-->
+        <form method="post" enctype="multipart/form-data" action="">
+            <div class="widget-body">
+                <div class="widget-main">
+                    <div class="form-group">
+                        <input type="file" id="id-input-file-2" name="file_data_transaksi"/>
 
-        <div class="row">
-            <!--UPLOAD EXCEL FORM-->
-            <form method="post" enctype="multipart/form-data" action="">
-                <div class="form-group">
-                    <div class="input-group">
-                        <label>Import data from excel</label>
-                        <input name="file_data_transaksi" type="file" class="form-control">
+                        <button name="submit" type="submit" value="" class="btn btn-app btn-purple btn-sm">
+                            <i class="ace-icon fa fa-cloud-upload bigger-200"></i> Upload
+                        </button>
+                        <button name="delete" type="submit"  class="btn btn-app btn-danger btn-sm" 
+                                onclick="return confirm('Are you sure?')" >
+                            <i class="ace-icon fa fa-trash-o bigger-200"></i> Delete
+                        </button>
                     </div>
                 </div>
-                <div class="form-group">
-                    <input name="submit" type="submit" value="Upload Data" class="btn btn-success">
-                </div>
-                <div class="form-group">
-                    <button name="delete" type="submit"  class="btn btn-danger" 
-                            onclick="return confirm('Are you sure?')" >
-                        <i class="fa fa-trash-o"></i> Delete All Data Transaction
-                    </button>
-                </div>
-            </form>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
 
+            <div class="row">
+                <div class="col-sm-12">
+                <div class="widget-box">
+                    <div class="widget-body">
+                    <div class="widget-main">
             <?php
             if (!empty($pesan_error)) {
                 display_error($pesan_error);
@@ -140,10 +149,9 @@ $jumlah=$db_object->db_num_rows($query);
                 display_success($pesan_success);
             }
 
-
             echo "Jumlah data: ".$jumlah."<br>";
             if($jumlah==0){
-                    echo "Data kosong...";
+                echo "Data kosong...";
             }
             else{
             ?>
@@ -158,7 +166,7 @@ $jumlah=$db_object->db_num_rows($query);
                     while($row=$db_object->db_fetch_array($query)){
                         echo "<tr>";
                             echo "<td>".$no."</td>";
-                            echo "<td>".$row['transaction_date']."</td>";
+                            echo "<td>".format_date2($row['transaction_date'])."</td>";
                             echo "<td>".$row['produk']."</td>";
                         echo "</tr>";
                         $no++;
@@ -168,7 +176,11 @@ $jumlah=$db_object->db_num_rows($query);
             <?php
             }
             ?>
-        </div>
+            </div>
+            </div>
+                    </div>
+            </div>
+                </div>
         </div>
     </div>
 </div>
@@ -190,3 +202,4 @@ function get_produk_to_in($produk){
 }
 
 ?>
+  
