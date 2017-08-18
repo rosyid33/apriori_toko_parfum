@@ -146,7 +146,7 @@ else{
                 <th>Support X U Y</th>
                 <th>Support X </th>
                 <th>Confidence</th>
-                <th></th>
+                <th>Keterangan</th>
                 </tr>
                 <?php
                     $no=1;
@@ -179,7 +179,7 @@ else{
                 <th>Support X U Y</th>
                 <th>Support X </th>
                 <th>Confidence</th>
-                <th></th>
+                <th>Keterangan</th>
                 </tr>
                 <?php
                     $no=1;
@@ -281,7 +281,7 @@ else{
                 <th>Item 1</th>
                 <th>Jumlah</th>
                 <th>Support</th>
-                <th></th>
+                <th>Keterangan</th>
                 </tr>
                 <?php
                 $no=1;
@@ -347,7 +347,7 @@ else{
                 <th>Item 2</th>
                 <th>Jumlah</th>
                 <th>Support</th>
-                <th></th>
+                <th>Keterangan</th>
                 </tr>
                 <?php
                 $no=1;
@@ -418,7 +418,7 @@ else{
                 <th>Item 3</th>
                 <th>Jumlah</th>
                 <th>Support</th>
-                <th></th>
+                <th>Keterangan</th>
                 </tr>
                 <?php
                 $no=1;

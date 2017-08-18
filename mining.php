@@ -121,7 +121,7 @@ function mining_process($db_object, $min_support, $min_confidence, $start_date, 
                 <th>Item</th>
                 <th>Jumlah</th>
                 <th>Suppport</th>
-                <th></th>
+                <th>Keterangan</th>
             </tr>";
     $itemset1 = $jumlahItemset1 = $supportItemset1 = $valueIn = array();
     $x=1;
@@ -182,7 +182,7 @@ function mining_process($db_object, $min_support, $min_confidence, $start_date, 
                 <th>Item2</th>
                 <th>Jumlah</th>
                 <th>Suppport</th>
-                <th></th>
+                <th>Keterangan</th>
             </tr>";
     $NilaiAtribut1 = $NilaiAtribut2 = array();
     $itemset2_var1 = $itemset2_var2 = $jumlahItemset2 = $supportItemset2 = array();
@@ -268,7 +268,7 @@ function mining_process($db_object, $min_support, $min_confidence, $start_date, 
                 <th>Item3</th>
                 <th>Jumlah</th>
                 <th>Suppport</th>
-                <th></th>
+                <th>Keterangan</th>
             </tr>";
     $a = 0;
     $tigaVariasiItem = $valueIn_itemset3 =  array();
